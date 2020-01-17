@@ -1,4 +1,5 @@
 #!/bin/bash
+REL="../bash_pipe/"
 if [ -z "$1" ]; then
   echo "what challenge are you grooving?"
   read TITLE
@@ -15,25 +16,25 @@ else
 fi
 
 if [ $COMMD == "--init" ]; then
-  bash bash-pipe/init.sh $TITLE
+  bash $REL"init.sh" $TITLE
 
 elif [ $COMMD == "--case" ]; then
   if [ -z "$3" ]; then
-    bash bash-pipe/case.sh $TITLE
+    bash $REL"case.sh" $TITLE
   else
-    bash bash-pipe/case.sh $TITLE $3
+    bash $REL"case.sh" $TITLE $3
   fi
 elif [ $COMMD == "--test" ]; then
   if [ -z "$3" ]; then
-    bash bash-pipe/test.sh $TITLE
+    bash $REL"test.sh" $TITLE
   else
-    bash bash-pipe/test.sh $TITLE $3
+    bash $REL"test.sh" $TITLE $3
   fi
 elif [ $COMMD == "--submitted" ]; then
   if [ -z "$3" ]; then
-    bash bash-pipe/submitted.sh $TITLE
+    bash $REL"submitted.sh" $TITLE
   else
-    bash bash-pipe/submitted.sh $TITLE $3
+    bash $REL"submitted.sh" $TITLE $3
   fi
 else
   echo "Invalid Command"
