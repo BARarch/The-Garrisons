@@ -1,5 +1,5 @@
 #!/bin/bash
-REL="../bash_pipe/"
+REL="../bash-pipe/"
 if [ -z "$1" ]; then
   echo "what challenge are you grooving?"
   read TITLE
