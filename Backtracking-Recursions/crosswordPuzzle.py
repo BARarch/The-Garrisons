@@ -10,6 +10,20 @@ import sys
 
 # Complete the crosswordPuzzle function below.
 def crosswordPuzzle(crossword, words):
+
+    def encode(crossword):
+        return list(map(list(), crossword))
+
+    def decode(C):
+        return list(map("".join(), C))
+
+    def transpose(C):
+        Ct = []
+
+        for row in C:
+            for col in row:
+                
+
     return words.strip().split(';')
 
 if __name__ == '__main__':
