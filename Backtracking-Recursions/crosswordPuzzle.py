@@ -26,16 +26,6 @@ def crosswordPuzzle(crossword, words):
         for row in crossword:
             print(row)
 
-    def encode(crossword):
-        return list(map(list, crossword))
-
-    def decode(C):
-        return list(map("".join(), C))
-
-    def transpose_endcoded(C):
-        Ci = [(x for x in row) for row in C]
-        return [list(map(next, Ci)) for i in C[0]]
-
     def transpose(crossword):
         Ci = [(x for x in row) for row in crossword]
         return [''.join(list(map(next, Ci))) for i in crossword[0]]
