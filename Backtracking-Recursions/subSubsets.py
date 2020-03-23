@@ -4,46 +4,33 @@
 def sumSubsets(arr, num):
 
     def sumSubsets_Help(arr, num, soln):
-        
-        print("New Branch num = " + str(num))
 
         if num == 0:
-            #print("returning")
-            return set((soln, ))
+            return [soln, ]
 
-        if len(arr) == 0:
-            return set()
-
-        solns = set()
-        print("soln: " + str(soln) + " num: " + str(num) + " arr: " + str(arr))
+        solns = []
         for i, val in enumerate(arr):
             if val <= num:
-                # Viable Solution
-                #print('Viable')
-                solns.union(sumSubsets_Help(arr[i + 1:], num - val, soln + (val,)))
-            else:
-                #print('Not Viable')
-                return solns
 
+                solns += sumSubsets_Help(arr[i + 1:], num - val, soln + (val,))
+                solns = sorted(list(set(solns)))
+            else:
+                return solns
+        print("Main Return: " + str(solns))
         return solns
 
-    #print("Initial In: ", end='')
-    #print(arr)
-    #print("num = " + str(num) )
-
     res = sumSubsets_Help(arr, num, ())
-    print(res)
-    return [[]]
+    return list(map(list, res))
 
 if __name__ == '__main__':
     import os
     from cs_utils import *
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
+    arr = list_string_to_list(input())
+    num = int(input())
 
-
-
-    fptr.write("Result goes here")
+    fptr.write(str(sumSubsets(arr, num)))
     fptr.write('\n')
 
     fptr.close()
