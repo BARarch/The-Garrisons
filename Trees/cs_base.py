@@ -1,11 +1,14 @@
 if __name__ == '__main__':
     import os
+    from cs_utils import *
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
+    #l = list_string_to_list(input())
+    #ll = list_string_to_linked_list(input())
+    #i = int(input())
+    #s = input()
 
-
-
-    fptr.write("Hello Worlds")
+    fptr.write(str("Function Call to Return Answer Here"))
     fptr.write('\n')
 
     fptr.close()
